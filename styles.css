@@ -13,17 +13,20 @@ header {
     background-color: #0056b3;
     color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* enables wrapping for smaller screens */
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex: 1;
+    flex-wrap: wrap;
 }
 
 .company-logo {
     max-height: 140px;
-    background: none; 
+    background: none;
 }
 
 .company-name {
@@ -39,16 +42,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    flex: 1;
 }
 
 .approval-info .gov-logo {
-    max-height: 60px; 
+    max-height: 60px;
     margin-bottom: 5px;
-    background-color: white; 
+    background-color: white;
     padding: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
-
 
 .license-info {
     font-size: 1.1em;
@@ -58,7 +61,7 @@ header {
 .highlight {
     font-size: 1.2em;
     font-weight: bold;
-    color: #FFD700; 
+    color: #FFD700;
 }
 
 .license-info strong {
@@ -66,11 +69,55 @@ header {
     font-size: 1.1em;
 }
 
-
-
 header div {
     font-weight: bold;
 }
+
+/* ✅ Mobile Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        text-align: left;
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .company-name {
+    font-size: 2em; /* Increased from 1.5em */
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+}
+
+
+    .approval-info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .approval-info .gov-logo {
+        margin: 10px 0;
+    }
+
+    .license-info {
+        font-size: 1em;
+    }
+
+    .highlight {
+        font-size: 1.1em;
+    }
+}
+
 
 
 section {
